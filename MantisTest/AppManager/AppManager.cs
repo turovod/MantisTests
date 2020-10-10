@@ -18,10 +18,16 @@ namespace MantisTest
         public IWebDriver Driver { get { return driver; } }
         public string BaseURL { get { return baseURL; } }
 
+        public RegistrationHelper Registration { get; private set; }
+        public FtpHalper Ftp { get; private set; }
+
         private AppManager()
         {
             driver = new FirefoxDriver();
-            baseURL = "http://localhost/addressbook/";
+            baseURL = "http://localhost/mantisbt-2.24.3/login_page.php";
+
+            Registration = new RegistrationHelper(this);
+            Ftp = new FtpHalper(this);
         }
 
         public static AppManager GetAppManager()
