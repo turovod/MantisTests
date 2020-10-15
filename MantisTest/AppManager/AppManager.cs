@@ -20,6 +20,7 @@ namespace MantisTest
 
         public RegistrationHelper Registration { get; private set; }
         public FtpHalper Ftp { get; private set; }
+        public JamesHelper James { get; private set; }
 
         private AppManager()
         {
@@ -28,6 +29,7 @@ namespace MantisTest
 
             Registration = new RegistrationHelper(this);
             Ftp = new FtpHalper(this);
+            James = new JamesHelper(this);
         }
 
         public static AppManager GetAppManager()

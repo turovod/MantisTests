@@ -27,6 +27,10 @@ namespace MantisTest
                 Email = "testuser@localhost.localdomain"
             };
 
+            // ---------------------------------- Create an account to receive a confirmation email          
+            appManager.James.Delete(accountData); // We check that there is definitely no such account
+            appManager.James.Add(accountData);
+
             appManager.Registration.Register(accountData);
         }
 
