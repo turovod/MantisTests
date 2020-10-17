@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace MantisTest
 {
@@ -17,6 +18,34 @@ namespace MantisTest
             OpenRegistrationForm();
             FillRegistrationForm(accountData);
             SubmitRegistration();
+
+            // ---
+            string url = GetConfirmationUrl(accountData);
+            FillPasswordForm(url, accountData);
+            SubmitPasseordForm();
+        }
+
+        private void SubmitPasseordForm()
+        {
+            appManager.Driver.FindElement(By.CssSelector("input.button")).Click();
+        }
+
+        private void FillPasswordForm(string url, AccountData accountData)
+        {
+            driver.Url = url;
+            appManager.Driver.FindElement(By.Name("password")).SendKeys(accountData.Password);
+            appManager.Driver.FindElement(By.Name("password_confirm")).SendKeys(accountData.Password);
+        }
+
+        private string GetConfirmationUrl(AccountData accountData)
+        {
+            string message = appManager.Mail.GetLastMail(accountData);
+
+            // Extracting a link from the text using regular expressions
+            // Connect usung text.regularExpression
+                                                // no space pattern
+            Match match = Regex.Match(message, @"http://\S*");
+            return match.Value;
         }
 
         private void OpenRegistrationForm()
