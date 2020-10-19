@@ -22,6 +22,7 @@ namespace MantisTest
         public FtpHalper Ftp { get; private set; }
         public JamesHelper James { get; private set; }
         public MailHelper Mail { get; private set; }
+        public AdminHelper Admin { get; private set; }
 
         private AppManager()
         {
@@ -32,6 +33,7 @@ namespace MantisTest
             Ftp = new FtpHalper(this);
             James = new JamesHelper(this);
             Mail = new MailHelper(this);
+            Admin = new AdminHelper(this);
         }
 
         public static AppManager GetAppManager()

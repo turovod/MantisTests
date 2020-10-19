@@ -4,10 +4,10 @@ using NUnit.Framework;
 namespace MantisTest
 {
     [TestFixture]
-    class UnitTest1 : TestBase
+    class AddDeleteAccounts : TestBase
     {
         [Test]
-        public void TestMethod1()
+        public void AddDeleteAccount()
         {
             AccountData accountData = new AccountData()
             {
