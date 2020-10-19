@@ -40,6 +40,7 @@ namespace MantisTest
                     string body = message.Body;
 
                     pop3.DeleteMessage(1);
+                    pop3.LogOut(); // Logoute be sure that as it confirms the deletion
 
                     return body;
                 }
