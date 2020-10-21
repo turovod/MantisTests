@@ -3,7 +3,7 @@
 namespace MantisTest
 {
     [SetUpFixture]
-    class TestBase
+    public class TestBase
     {
         protected AppManager appManager = AppManager.GetAppManager();
 

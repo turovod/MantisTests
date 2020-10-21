@@ -8,7 +8,7 @@ using NUnit.Framework;
 namespace MantisTest
 {
     [TestFixture]
-    class DeleteAccountNoBrouserTests : TestBase
+    public class DeleteAccountNoBrouserTests : TestBase
     {
         [Test]
         public void DeleteAccountNoBrouserTest()

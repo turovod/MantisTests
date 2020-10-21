@@ -4,7 +4,7 @@ using NUnit.Framework;
 namespace MantisTest
 {
     [TestFixture]
-    class AddDeleteAccounts : TestBase
+    public class AddDeleteAccounts : TestBase
     {
         [Test]
         public void AddDeleteAccount()

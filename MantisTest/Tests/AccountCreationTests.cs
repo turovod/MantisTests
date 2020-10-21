@@ -4,7 +4,7 @@ using System.IO;
 namespace MantisTest
 {
     [TestFixture]
-    class AccountCreationTests : TestBase
+    public class AccountCreationTests : TestBase
     {
         //[TestFixtureSetUp]
         //public void SetUpConfig()

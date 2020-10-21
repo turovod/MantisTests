@@ -12,6 +12,7 @@ namespace MantisTest
     {
         private IWebDriver driver;
         private string baseURL;
+        private string baseURL1;
 
         private static AppManager appManager;
 
@@ -23,17 +24,20 @@ namespace MantisTest
         public JamesHelper James { get; private set; }
         public MailHelper Mail { get; private set; }
         public AdminHelper Admin { get; private set; }
+        internal APIHelper API { get; private set; }
 
         private AppManager()
         {
             driver = new FirefoxDriver();
             baseURL = "http://localhost/mantisbt-2.24.3/login_page.php";
+            baseURL1 = "http://localhost/mantisbt-2.24.3";
 
             Registration = new RegistrationHelper(this);
             Ftp = new FtpHalper(this);
             James = new JamesHelper(this);
             Mail = new MailHelper(this);
             Admin = new AdminHelper(this);
+            API = new APIHelper(this);
         }
 
         public static AppManager GetAppManager()
